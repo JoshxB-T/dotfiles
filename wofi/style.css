@@ -1,0 +1,52 @@
+@define-color base           #5d5d5d;
+@define-color blue_border    #ff5555;
+@define-color primary_yellow #ff5555;
+@define-color base_alt       #808080;
+@define-color primary_blue   #ffffff;
+ 
+* {
+    font-family: "3270 Nerd Font";
+    font-size: 16px;
+}
+ 
+window {
+    border: 3px solid @blue_border;
+    border-radius: 20px;
+}
+ 
+#input {
+    margin-bottom: 15px;
+    padding:3px;
+    border-radius: 5px;
+    border: 2px @primary_blue;
+    color: #000000;
+}
+ 
+#inner-box {
+    background-color: @base_alt;
+    box-shadow: -4px -3px 45px 21px rgba(0,0,0,0.35);
+}
+ 
+#outer-box {
+    margin: 5px;
+    padding: 10px;
+    background-color: @base;
+    border-radius: 15px;
+}
+
+#text {
+    padding: 5px;
+    color: @primary_blue;
+}
+ 
+#entry {
+    padding: 10px;
+}
+ 
+#entry:nth-child(even) {
+    background-color: @base;
+}
+ 
+#entry:selected {
+    background-color: @primary_yellow;
+}
