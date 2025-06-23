@@ -7,6 +7,15 @@
 
 #workspaces button {
     color: @primary_gray;
+    border: none;
+}
+
+button:hover {
+    box-shadow: none;
+    text-shadow: none;
+    background: none;
+    transition: none;
+    border-color: transparent;
 }
 
 #workspaces button.active {
@@ -74,5 +83,5 @@ window#waybar {
 
 #tray > .needs-attention {
     -gtk-icon-effect: highlight;
-    background-color: #ffffff; /* #eb4d4b; */
+    background-color: #ffffff;
 }
