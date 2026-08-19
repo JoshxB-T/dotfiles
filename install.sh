@@ -17,12 +17,12 @@ PACKAGES=(
 
 echo -e "${YELLOW}Installing packages...${NC}"
 for PACKAGE in "${PACKAGES[@]}"; do
-    if pacman -Qi ${PACKAGE} &> /dev/null ; then
+    if [ pacman -Qi ${PACKAGE} &> /dev/null ] ; then
         echo -e "${GREEN}[ALREADY INSTALLED]${NC} $PACKAGE is already present on the system."
     else
         echo "pacman -S -y $package"
 
-        if [ $? -eq 1 ] ; then
+        if [ $? -eq 0 ] ; then
             echo -e "${GREEN}[SUCCESS]${NC} $PACKAGE installed successfully."
         else
             echo -e "${RED}[ERROR]${NC} Failed to install $PACKAGE."
@@ -30,6 +30,7 @@ for PACKAGE in "${PACKAGES[@]}"; do
     fi
 done
 echo -e "${GREEN}Completed installing packages.${NC}\n"
+
 echo -e "${YELLOW}Moving files...${NC}"
 echo "mv fastfetch $HOME/.config/fastfetch/"
 echo "mv neovim $HOME/.config/nvim/"
